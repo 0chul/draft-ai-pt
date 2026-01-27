@@ -105,242 +105,175 @@ const SolutionTech: React.FC = () => {
         </div>
 
         {/* Deep Tech Core Visualization - Recursive Cycle */}
-        <div className="relative rounded-3xl overflow-hidden border border-gray-800 bg-[#0f172a] min-h-[800px] xl:min-h-[700px] flex flex-col xl:flex-row">
-             {/* Grid Background */}
-             <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-             
-             {/* Left: Description Panel */}
-             <div className="xl:w-1/3 p-10 xl:p-12 border-b xl:border-b-0 xl:border-r border-gray-800 bg-[#020617]/50 backdrop-blur-sm z-20 relative">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-900/30 text-cyan-400 text-xs font-bold mb-6 border border-cyan-500/30">
-                    <Zap className="w-3 h-3" /> Deep Tech Editorial
-                </div>
-                <h3 className="text-3xl font-bold mb-6 leading-tight">
-                    Deep Tech Core: <br/>
-                    스스로 평가하고 고쳐 쓰는 <br/>
-                    <span className="text-cyan-400">'재귀적 개선 루프'</span> <br/>
-                    (Self-Critique Loop)
-                </h3>
-                <p className="text-gray-400 mb-8 leading-relaxed">
-                    Draft AI는 생성된 초안을 그대로 내놓지 않습니다. 
-                    <strong>'평가(Critique)'</strong>와 <strong>'개선(Refine)'</strong> 과정을 반복 수행하여 
-                    환각(Hallucination)을 억제하고, 결과물의 사실적 신뢰도를 보장합니다.
-                </p>
-                
-                <div className="space-y-4">
-                    <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/5">
-                        <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 font-bold">1</div>
-                        <div>
-                            <h5 className="font-bold text-white text-sm">Critique Agent</h5>
-                            <p className="text-xs text-gray-500">RFP 요구사항 기반 엄격 평가</p>
-                        </div>
-                    </div>
-                    <div className="flex items-center gap-4 p-4 rounded-xl bg-cyan-500/10 border border-cyan-500/20">
-                        <div className="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 font-bold">2</div>
-                        <div>
-                            <h5 className="font-bold text-white text-sm">Decision Gate</h5>
-                            <p className="text-xs text-gray-500">품질 점수 미달 시 재작성 지시 (Loop)</p>
-                        </div>
-                    </div>
-                </div>
-             </div>
-
-             {/* Right: Visualization Diagram */}
-             <div className="xl:w-2/3 relative flex items-center justify-center overflow-hidden py-10 xl:py-0">
-                
-                {/* Center Glow */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[100px] pointer-events-none"></div>
-
-                {/* Diagram Container - Scaled for responsiveness */}
-                <div className="relative w-[340px] h-[340px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] select-none scale-90 md:scale-100">
+        <div className="relative w-full max-w-5xl mx-auto mt-20">
+            {/* Background Grid */}
+            <div className="absolute inset-0 bg-[#0a1022] rounded-3xl border border-gray-800 overflow-hidden">
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+                <div className="absolute inset-0 bg-radial-gradient from-blue-900/10 via-transparent to-transparent"></div>
+            </div>
+            
+            <div className="relative z-10 py-16 md:py-24 flex justify-center overflow-hidden">
+                {/* Diagram Container */}
+                <div className="relative w-[800px] h-[600px] max-w-full scale-[0.6] md:scale-[0.8] lg:scale-100 origin-center select-none">
                     
-                    {/* --- SVG Layer for Lines & Circles --- */}
-                    <svg className="absolute inset-0 w-full h-full overflow-visible pointer-events-none">
+                    {/* SVG Layer */}
+                    <svg className="absolute inset-0 w-full h-full overflow-visible" viewBox="0 0 800 600">
                         <defs>
-                            <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stopColor="#c084fc" stopOpacity="0" />
-                                <stop offset="50%" stopColor="#a855f7" stopOpacity="1" />
-                                <stop offset="100%" stopColor="#7e22ce" stopOpacity="1" />
+                            <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stopColor="#a855f7" />
+                                <stop offset="100%" stopColor="#d8b4fe" />
                             </linearGradient>
-                            <marker id="arrowHead" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-                                <path d="M0,0 L6,3 L0,6 L0,0" fill="#475569" />
+                             <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stopColor="#3b82f6" />
+                                <stop offset="100%" stopColor="#60a5fa" />
+                            </linearGradient>
+                            <marker id="arrowHeadPurple" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">
+                                <path d="M0,0 L4,2 L0,4 L0,0" fill="#a855f7" />
                             </marker>
-                             <marker id="arrowHeadBlue" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-                                <path d="M0,0 L6,3 L0,6 L0,0" fill="#3b82f6" />
-                            </marker>
-                             <marker id="arrowHeadPurple" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-                                <path d="M0,0 L6,3 L0,6 L0,0" fill="#a855f7" />
+                            <marker id="arrowHeadBlue" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto">
+                                <path d="M0,0 L4,2 L0,4 L0,0" fill="#3b82f6" />
                             </marker>
                         </defs>
 
-                        {/* Main Dashed Circle */}
-                        <circle cx="50%" cy="50%" r="40%" fill="none" stroke="#334155" strokeWidth="2" strokeDasharray="8 8" className="opacity-50" />
+                        {/* Main Circle */}
+                        <circle cx="400" cy="300" r="200" fill="none" stroke="#1e293b" strokeWidth="2" strokeDasharray="8 8" />
 
-                        {/* Path A: Purple Curve (Bottom to Left) */}
-                        {/* Approx path from 6 o'clock to 9 o'clock */}
-                        <path 
-                            d="M 300 540 A 240 240 0 0 1 60 300" 
-                            fill="none" 
-                            stroke="url(#purpleGradient)" 
-                            strokeWidth="4"
-                            strokeLinecap="round"
-                            className="hidden lg:block" /* Only visible on large screens matching the coordinate system */
-                        />
-                         {/* Responsive Path A for smaller screens (simplified logic via CSS classes elsewhere or media queries not easily done in SVG coords without viewBox)
-                             Using viewbox to normalize coordinates 
-                         */}
-                    </svg>
-                    
-                    {/* SVG for normalized coordinates */}
-                    <svg viewBox="0 0 600 600" className="absolute inset-0 w-full h-full overflow-visible pointer-events-none">
-                        {/* Path A Highlight (Bottom to Left) */}
-                         <motion.path 
-                            d="M 300 540 A 240 240 0 0 1 60 300" 
-                            fill="none" 
-                            stroke="#a855f7" 
+                        {/* Path A: Decision (Bottom) to Refine (Left) */}
+                        <motion.path 
+                            d="M 400 500 A 200 200 0 0 1 200 300"
+                            fill="none"
+                            stroke="url(#purpleGradient)"
                             strokeWidth="3"
+                            markerEnd="url(#arrowHeadPurple)"
                             initial={{ pathLength: 0 }}
                             whileInView={{ pathLength: 1 }}
                             transition={{ duration: 1.5, delay: 0.5 }}
-                            markerEnd="url(#arrowHeadPurple)"
                         />
-                        
-                        {/* Path B Highlight (Bottom to Right Out) */}
+
+                        {/* Path B: Decision (Bottom) to Output (Right) */}
                         <motion.path 
-                            d="M 350 540 C 450 540, 500 500, 580 450" 
-                            fill="none" 
-                            stroke="#3b82f6" 
+                            d="M 460 500 C 550 500, 600 500, 670 450"
+                            fill="none"
+                            stroke="url(#blueGradient)"
                             strokeWidth="3"
-                            strokeDasharray="6 6"
+                            markerEnd="url(#arrowHeadBlue)"
                             initial={{ pathLength: 0 }}
                             whileInView={{ pathLength: 1 }}
-                            transition={{ duration: 1.5, delay: 1 }}
-                            markerEnd="url(#arrowHeadBlue)"
+                            transition={{ duration: 1.5, delay: 0.5 }}
                         />
-
-                        {/* Arrows on the circle */}
-                         <path d="M 300 60 L 310 60" markerEnd="url(#arrowHead)" stroke="none" transform="rotate(45 300 300) translate(240 0)" /> 
                     </svg>
 
-
-                    {/* --- Center Text --- */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-0 w-48">
-                        <h4 className="text-xl md:text-2xl font-bold text-white leading-tight">
+                    {/* Center Content */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+                        <h3 className="text-3xl font-bold text-white leading-tight">
                             Recursive<br/>
-                            <span className="text-gray-400">Critique-Refine</span><br/>
+                            <span className="text-gray-400 text-2xl">Critique-Refine</span><br/>
                             Cycle
-                        </h4>
+                        </h3>
                     </div>
 
-
-                    {/* --- Node 1: Top (Draft Generation) --- */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 translate-y-[-20%] flex flex-col items-center z-10">
-                        <motion.div 
-                            initial={{ scale: 0.8, opacity: 0 }}
-                            whileInView={{ scale: 1, opacity: 1 }}
-                            className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#0f172a] border-2 border-blue-500 flex items-center justify-center shadow-[0_0_30px_rgba(59,130,246,0.3)] mb-4"
-                        >
-                            <FileText className="w-8 h-8 md:w-10 md:h-10 text-blue-400" />
-                        </motion.div>
-                        <div className="text-center w-48">
-                            <h5 className="font-bold text-white text-lg">Draft Generation</h5>
-                            <p className="text-sm text-gray-400">초안 생성</p>
-                        </div>
-                    </div>
-
-                    {/* --- Node 2: Right (Critique Agent) --- */}
-                    <div className="absolute top-1/2 right-0 translate-x-[20%] -translate-y-1/2 flex flex-col items-center z-10">
-                        <motion.div 
-                            initial={{ scale: 0.8, opacity: 0 }}
-                            whileInView={{ scale: 1, opacity: 1 }}
-                            transition={{ delay: 0.2 }}
-                            className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#0f172a] border-2 border-cyan-500 flex items-center justify-center shadow-[0_0_30px_rgba(6,182,212,0.3)] mb-4"
-                        >
-                            <ShieldAlert className="w-8 h-8 md:w-10 md:h-10 text-cyan-400" />
-                        </motion.div>
-                        <div className="text-center w-48">
-                            <h5 className="font-bold text-white text-lg">Critique Agent</h5>
-                            <p className="text-sm text-gray-400">RFP 기반 엄격 평가</p>
-                        </div>
-                    </div>
-
-                    {/* --- Node 3: Bottom (Decision Gate) --- */}
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[20%] flex flex-col items-center z-10">
-                        <motion.div 
-                            initial={{ scale: 0.8, opacity: 0 }}
-                            whileInView={{ scale: 1, opacity: 1 }}
-                            transition={{ delay: 0.4 }}
-                            className="w-24 h-24 md:w-28 md:h-28 bg-blue-600 rotate-45 flex items-center justify-center shadow-xl border-4 border-[#0a1022] z-20 mb-8"
-                        >
-                            <div className="-rotate-45 text-center">
-                                <span className="block text-white/80 text-xs font-bold uppercase">Score</span>
-                                <span className="block text-white font-extrabold text-xl">&lt; 80?</span>
-                            </div>
-                        </motion.div>
-                         <div className="text-center w-48 -mt-2">
-                            <h5 className="font-bold text-white text-lg">Decision Gate</h5>
-                        </div>
-                    </div>
-
-                    {/* --- Node 4: Left (Refine Generation) --- */}
-                    <div className="absolute top-1/2 left-0 -translate-x-[20%] -translate-y-1/2 flex flex-col items-center z-10">
-                        <motion.div 
-                            initial={{ scale: 0.8, opacity: 0 }}
-                            whileInView={{ scale: 1, opacity: 1 }}
-                            transition={{ delay: 0.6 }}
-                            className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#0f172a] border-2 border-purple-500 flex items-center justify-center shadow-[0_0_30px_rgba(168,85,247,0.3)] mb-4"
-                        >
-                            <Edit3 className="w-8 h-8 md:w-10 md:h-10 text-purple-400" />
-                        </motion.div>
-                        <div className="text-center w-48">
-                            <h5 className="font-bold text-white text-lg">Refine Generation</h5>
-                            <p className="text-sm text-gray-400">환각 억제 및 보강</p>
-                        </div>
-                    </div>
-
-                    {/* --- Path Labels & Decorators --- */}
+                    {/* Nodes */}
                     
-                    {/* Arrow: Top to Right */}
-                    <div className="absolute top-[15%] right-[15%] text-gray-600 rotate-45">
-                        <ArrowRight className="w-6 h-6" />
-                    </div>
-                    {/* Arrow: Right to Bottom */}
-                    <div className="absolute bottom-[15%] right-[15%] text-gray-600 rotate-[135deg]">
-                        <ArrowRight className="w-6 h-6" />
-                    </div>
-                    {/* Arrow: Left to Top */}
-                     <div className="absolute top-[15%] left-[15%] text-gray-600 -rotate-[45deg]">
-                        <ArrowRight className="w-6 h-6" />
-                    </div>
-
-                    {/* Path A Label (Loop) */}
-                    <div className="absolute bottom-[18%] left-[18%] rotate-[-45deg] text-center">
-                        <div className="text-purple-400 font-bold text-sm bg-[#0f172a] px-2 py-1 rounded-full border border-purple-500/30">
-                            Path A (If Yes)
+                    {/* Top: Draft Generation */}
+                    <div className="absolute top-[100px] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                        <motion.div 
+                            initial={{ scale: 0 }} whileInView={{ scale: 1 }} 
+                            className="w-24 h-24 rounded-full bg-[#0a1022] border-2 border-blue-500 shadow-[0_0_30px_rgba(59,130,246,0.3)] flex items-center justify-center relative z-10 mb-4"
+                        >
+                            <FileText className="w-10 h-10 text-blue-400" />
+                        </motion.div>
+                        <div className="text-center">
+                            <h4 className="text-xl font-bold text-white">Draft Generation</h4>
+                            <p className="text-gray-400">초안 생성</p>
                         </div>
                     </div>
 
-                    {/* Path B Label (Exit) */}
-                     <div className="absolute bottom-[8%] right-[20%] text-center z-20">
-                         <div className="text-blue-400 font-bold text-sm whitespace-nowrap bg-[#0f172a] px-2 py-1 rounded-full border border-blue-500/30">
-                            Path B (If No)
-                         </div>
+                    {/* Right: Critique Agent */}
+                    <div className="absolute top-[300px] left-[600px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                         <motion.div 
+                            initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ delay: 0.2 }}
+                            className="w-24 h-24 rounded-full bg-[#0a1022] border-2 border-cyan-500 shadow-[0_0_30px_rgba(6,182,212,0.3)] flex items-center justify-center relative z-10 mb-4"
+                        >
+                            <ShieldAlert className="w-10 h-10 text-cyan-400" />
+                        </motion.div>
+                        <div className="text-center">
+                            <h4 className="text-xl font-bold text-white">Critique Agent</h4>
+                            <p className="text-gray-400">RFP 기반 엄격 평가</p>
+                        </div>
                     </div>
 
-                    {/* Final Output Node */}
-                    <motion.div 
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 1.2 }}
-                        className="absolute bottom-[-10%] right-[-15%] flex flex-col items-center z-10"
-                    >
-                         <div className="w-20 h-20 bg-blue-100 rounded-xl flex items-center justify-center shadow-xl border-4 border-[#0a1022] z-20 mb-2">
-                            <FileCheck className="w-10 h-10 text-blue-600" />
+                    {/* Left: Refine Generation */}
+                    <div className="absolute top-[300px] left-[200px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                         <motion.div 
+                            initial={{ scale: 0 }} whileInView={{ scale: 1 }} transition={{ delay: 0.6 }}
+                            className="w-24 h-24 rounded-full bg-[#0a1022] border-2 border-purple-500 shadow-[0_0_30px_rgba(168,85,247,0.3)] flex items-center justify-center relative z-10 mb-4"
+                        >
+                            <Edit3 className="w-10 h-10 text-purple-400" />
+                        </motion.div>
+                        <div className="text-center">
+                            <h4 className="text-xl font-bold text-white">Refine Generation</h4>
+                            <p className="text-gray-400">환각 억제 및 보강</p>
+                        </div>
+                    </div>
+
+                    {/* Bottom: Decision Gate */}
+                     <div className="absolute top-[500px] left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                         <motion.div 
+                            initial={{ scale: 0, rotate: 45 }} whileInView={{ scale: 1, rotate: 45 }} transition={{ delay: 0.4 }}
+                            className="w-28 h-28 bg-blue-600 flex items-center justify-center shadow-2xl border-4 border-[#0a1022] z-20 mb-8"
+                         >
+                             <div className="-rotate-45 text-center">
+                                 <div className="text-blue-200 text-xs font-bold tracking-widest uppercase">Score</div>
+                                 <div className="text-white text-2xl font-black">&lt; 80?</div>
+                             </div>
+                         </motion.div>
+                         <div className="text-center w-40">
+                            <h4 className="text-xl font-bold text-white">Decision Gate</h4>
+                        </div>
+                    </div>
+
+                    {/* Final Output - Right Bottom */}
+                     <div className="absolute top-[440px] left-[710px] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                         <div className="relative group">
+                             {/* Dashed placeholder effect */}
+                             <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-16 h-12 border-2 border-dashed border-gray-600 rounded-lg opacity-50"></div>
+                             <ArrowRight className="absolute -top-8 left-1/2 -translate-x-1/2 -rotate-90 text-blue-500 w-6 h-6 animate-bounce" />
+
+                             <motion.div 
+                                initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}
+                                className="w-20 h-20 bg-blue-100 rounded-xl flex items-center justify-center shadow-xl border-4 border-[#0a1022] relative z-10"
+                             >
+                                <FileCheck className="w-10 h-10 text-blue-600" />
+                            </motion.div>
                          </div>
-                         <h5 className="font-bold text-blue-100 text-lg">Final Output</h5>
+                         <div className="mt-3 font-bold text-blue-100 text-xl">Final Output</div>
+                    </div>
+
+                    {/* Labels */}
+                    <motion.div 
+                        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 1 }}
+                        className="absolute top-[440px] left-[260px] rotate-[-45deg] z-20"
+                    >
+                        <span className="bg-[#0a1022] text-purple-400 border border-purple-500/50 px-3 py-1 rounded-full text-sm font-bold shadow-lg">
+                            Path A (If Yes)
+                        </span>
                     </motion.div>
 
+                     <motion.div 
+                        initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 1 }}
+                        className="absolute top-[480px] left-[540px] z-20"
+                    >
+                        <span className="bg-[#0a1022] text-blue-400 border border-blue-500/50 px-3 py-1 rounded-full text-sm font-bold shadow-lg">
+                            Path B (If No)
+                        </span>
+                    </motion.div>
+
+                    {/* Decor Arrows */}
+                     <ArrowRight className="absolute top-[160px] left-[540px] text-gray-700 rotate-45 w-8 h-8" />
+                     <ArrowRight className="absolute top-[440px] left-[540px] text-gray-700 rotate-[135deg] w-8 h-8" />
+                     <ArrowRight className="absolute top-[160px] left-[260px] text-gray-700 -rotate-45 w-8 h-8" />
                 </div>
-             </div>
+            </div>
         </div>
       </div>
     </section>
