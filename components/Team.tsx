@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Code, Award, Briefcase } from 'lucide-react';
+import { Code, Briefcase } from 'lucide-react';
 
 const Team: React.FC = () => {
   const teamMembers = [

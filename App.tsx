@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronRight, ArrowUp } from 'lucide-react';
+import { Menu, X, ArrowUp } from 'lucide-react';
 import Hero from './components/Hero';
 import ProblemAnalysis from './components/ProblemAnalysis';
 import SolutionTech from './components/SolutionTech';

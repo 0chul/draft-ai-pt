@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileSearch, PenTool, Layout, CheckCircle2, ArrowRight, BookOpen, BarChart3 } from 'lucide-react';
+import { FileSearch, Layout, CheckCircle2, ArrowRight, BookOpen, BarChart3 } from 'lucide-react';
 
 const ServiceDetail: React.FC = () => {
   const services = [

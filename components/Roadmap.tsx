@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flag, Rocket, Briefcase, Server, Award } from 'lucide-react';
+import { Flag, Rocket, Briefcase, Server } from 'lucide-react';
 
 const Roadmap: React.FC = () => {
   const milestones = [
