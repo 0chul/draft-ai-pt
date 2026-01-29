@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, FileText, Zap, FileCheck, Edit3, ShieldAlert, BarChart3, BookOpen, ArrowRight } from 'lucide-react';
+import { Search, FileText, FileCheck, Edit3, ShieldAlert, BarChart3, BookOpen, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const SolutionTech: React.FC = () => {
