@@ -1,5 +1,5 @@
 import React from 'react';
-import { FileSearch, Layout, CheckCircle2, ArrowRight, BookOpen, BarChart3 } from 'lucide-react';
+import { FileSearch, Layout, CheckCircle2, BookOpen, BarChart3 } from 'lucide-react';
 
 const ServiceDetail: React.FC = () => {
   const services = [
@@ -98,14 +98,6 @@ const ServiceDetail: React.FC = () => {
               <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-[100px] group-hover:bg-blue-500/20 transition-all duration-500"></div>
             </div>
           ))}
-        </div>
-
-        {/* Bottom CTA Area for Demo */}
-        <div className="mt-16 text-center">
-            <button className="inline-flex items-center gap-3 bg-white/5 hover:bg-white/10 border border-white/20 text-white px-8 py-4 rounded-full font-bold transition-all hover:scale-105">
-                <span>서비스 시연 영상 보기</span>
-                <ArrowRight className="w-5 h-5" />
-            </button>
         </div>
       </div>
     </section>
